@@ -1,16 +1,21 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 
 namespace API.Controllers
 {
+    [EnableCors("AllowCors")]
     [ApiController]
     [Route("api/[controller]")]
     public class CryptoController : ControllerBase
     {
+
+
         [HttpGet("GetCrypto")]
         public List<Crypto>  Get()
         {
